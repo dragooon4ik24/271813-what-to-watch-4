@@ -8,8 +8,22 @@ const init = () => {
     genre: `Drama`,
     year: 2014,
   };
+  const listFilms = [
+    `Fantastic Beasts`,
+    `Bohemian Rhapsody`,
+    `Macbeth`,
+    `Aviator`,
+    `We need to talk about Kevin`,
+    `What We Do in the Shadows`,
+    `Revenant`,
+  ];
   ReactDOM.render(
-      <App promoTitle={promo.title} promoGenre={promo.genre} promoYear={promo.year}/>,
+      <App
+        promoTitle={promo.title}
+        promoGenre={promo.genre}
+        promoYear={promo.year}
+        films={listFilms}
+      />,
       document.querySelector(`#root`)
   );
 };
