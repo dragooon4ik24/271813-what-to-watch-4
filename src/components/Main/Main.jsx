@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Main({title, genre, year, films}) {
+import Film from "../film/film.jsx";
+
+export default function Main({ title, genre, year, films }) {
   return (
     <React.Fragment>
       <div className="visually-hidden">
@@ -221,24 +223,7 @@ export default function Main({title, genre, year, films}) {
 
           <div className="catalog__movies-list">
             {films.map((name) => (
-              <article
-                key={name}
-                className="small-movie-card catalog__movies-card"
-              >
-                <div className="small-movie-card__image">
-                  <img
-                    src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                    alt="Fantastic Beasts: The Crimes of Grindelwald"
-                    width="280"
-                    height="175"
-                  />
-                </div>
-                <h3 className="small-movie-card__title">
-                  <a className="small-movie-card__link" href="movie-page.html">
-                    {name}
-                  </a>
-                </h3>
-              </article>
+              <Film key={name} name={name} />
             ))}
           </div>
           <div className="catalog__more">
@@ -270,5 +255,5 @@ Main.propTypes = {
   title: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,
   year: PropTypes.number.isRequired,
-  films: PropTypes.arrayOf(PropTypes.string),
+  films: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Film({name}) {
+export default function Film({ name }) {
   return (
     <article className="small-movie-card catalog__movies-card">
       <div className="small-movie-card__image">
@@ -25,5 +25,5 @@ Film.propTypes = {
     `We need to talk about Kevin`,
     `What We Do in the Shadows`,
     `Revenant`,
-  ]),
+  ]).isRequired,
 };
