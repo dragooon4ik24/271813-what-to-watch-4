@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Film from "../film/film.jsx";
 
-export default function Main({ title, genre, year, films }) {
+export default function Main({title, genre, year, films, onClick}) {
   return (
     <React.Fragment>
       <div className="visually-hidden">
@@ -223,7 +223,7 @@ export default function Main({ title, genre, year, films }) {
 
           <div className="catalog__movies-list">
             {films.map((name) => (
-              <Film key={name} name={name} />
+              <Film key={name} name={name} onClick={onClick} />
             ))}
           </div>
           <div className="catalog__more">
@@ -256,4 +256,5 @@ Main.propTypes = {
   genre: PropTypes.string.isRequired,
   year: PropTypes.number.isRequired,
   films: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClick: PropTypes.func.isRequired,
 };

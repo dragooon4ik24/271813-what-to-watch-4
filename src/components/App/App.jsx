@@ -9,6 +9,8 @@ export default function App({promoTitle, promoGenre, promoYear, films}) {
       genre={promoGenre}
       year={promoYear}
       films={films}
+      onClick={() => {
+      }}
     />
   );
 }
